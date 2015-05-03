@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="SQLite - stocks" uuid="936b2d8e-efa5-43ea-9ec0-e6c5bbff1f47">
+    <database-info product="SQLite" version="3.8.7" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
+    <schema name="" catalog=""/>
+    <table name="stock" schema="" catalog="" type="TABLE">
+      <column name="SC_CODE" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="SC_NAME" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="SC_GROUP" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="SC_TYPE" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="OPEN" sqlType="NUMERIC" precision="2000000000" scale="10" nullable="true" jdbcType="6"/>
+      <column name="HIGH" sqlType="NUMERIC" precision="2000000000" scale="10" nullable="true" jdbcType="6"/>
+      <column name="LOW" sqlType="NUMERIC" precision="2000000000" scale="10" nullable="true" jdbcType="6"/>
+      <column name="CLOSE" sqlType="NUMERIC" precision="2000000000" scale="10" nullable="true" jdbcType="6"/>
+      <column name="LAST" sqlType="NUMERIC" precision="2000000000" scale="10" nullable="true" jdbcType="6"/>
+      <column name="PREVCLOSE" sqlType="NUMERIC" precision="2000000000" scale="10" nullable="true" jdbcType="6"/>
+      <column name="NO_TRADES" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="NO_OF_SHRS" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="NET_TURNOV" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="TDCLOINDI" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="Date" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+    </table>
+  </data-source>
+</component>
