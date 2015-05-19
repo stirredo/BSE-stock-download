@@ -42,7 +42,7 @@ class DownloadStock:
             return False
 
     def __parseFile(self):
-        path = '{0}{1}{2}'.format("zip_files","\\", self.fileName)
+        path = '{0}{1}{2}'.format("zip_files","/", self.fileName)
         with open(path, 'rb') as csvfile:
             reader = csv.reader(csvfile, delimiter=',')
             data = []
