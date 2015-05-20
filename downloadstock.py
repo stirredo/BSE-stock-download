@@ -15,7 +15,7 @@ class DownloadStock:
     def __init__(self, date, verbose=False):
         self.verbose = verbose
         self.date = date
-        self.fileName = '{0}{1}{2}'.format('EQ', self.date.strftime('%d%m%y'), '.csv')
+        self.fileName = '{0}{1}{2}'.format('EQ', self.date.strftime('%d%m%y'), '.CSV')
         if not self.__checkDateInDatabase():
             if self.__downloadFile():
                 if (verbose == True):
