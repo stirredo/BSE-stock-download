@@ -1,3 +1,4 @@
+import os
 import requests
 import StringIO
 import zipfile
@@ -36,13 +37,14 @@ class DownloadStock:
         if (r.ok) and (zipfile.is_zipfile(StringIO.StringIO(r.content))):
 
             z = zipfile.ZipFile(StringIO.StringIO(r.content))
-            z.extractall('zip_files/')
+            z.extractall(os.path.join(os.path.curdir, 'zip_files'))
             return True
         else:
             return False
 
     def __parseFile(self):
         path = '{0}{1}{2}'.format("zip_files","/", self.fileName)
+        path = os.path.join(os.path.curdir, 'zip_files', self.fileName)
         with open(path, 'rb') as csvfile:
             reader = csv.reader(csvfile, delimiter=',')
             data = []
