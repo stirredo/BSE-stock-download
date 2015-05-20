@@ -36,7 +36,7 @@ class DownloadStock:
         if (r.ok) and (zipfile.is_zipfile(StringIO.StringIO(r.content))):
 
             z = zipfile.ZipFile(StringIO.StringIO(r.content))
-            z.extractall('zip_files\\')
+            z.extractall('zip_files/')
             return True
         else:
             return False
