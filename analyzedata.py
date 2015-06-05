@@ -322,8 +322,8 @@ class AnalyzeData():
     @staticmethod
     def getDataUsingPercentageTransMoney(startDate, endDate):
         # query = "SELECT * from stock where date >= ? and date <= ? order by no_trades desc LIMIT 10"
-        query = "SELECT *,last * no_of_shrs as totalmoney, CAST(no_trades AS DOUBLE) / cast(no_of_shrs as DOUBLE) * cast(100 as DOUBLE) as percentage, last * no_of_shrs as totalmoney from stock where percentage < 100 and date >= ? and date <= ? order by percentage, totalmoney DESC LIMIT 10"
-        countQuery = "SELECT count(*), CAST(no_trades AS DOUBLE) / cast(no_of_shrs as DOUBLE) * cast(100 as DOUBLE) as percentage, last * no_of_shrs as totalmoney from stock where percentage < 100 and date >= ? and date <= ? order by percentage, totalmoney DESC LIMIT 10"
+        query = "SELECT *, CAST(no_trades AS DOUBLE) / cast(no_of_shrs as DOUBLE) * cast(100 as DOUBLE) as percentage, last * no_of_shrs as totalmoney from stock where percentage < 100 and date >= ? and date <= ? order by percentage DESC LIMIT 10"
+        countQuery = "SELECT count(*), CAST(no_trades AS DOUBLE) / cast(no_of_shrs as DOUBLE) * cast(100 as DOUBLE) as percentage, last * no_of_shrs as totalmoney from stock where percentage < 100 and date >= ? and date <= ? order by percentage DESC LIMIT 10"
         parameters = [startDate.strftime('%Y%m%d'), endDate.strftime('%Y%m%d')]
         db = DB()
         # result = db.cursor.execute(query, parameters)
