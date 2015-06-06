@@ -338,8 +338,8 @@ class AnalyzeData():
     def getDataForDayUsingPercentageTransMoney(date):
         db = DB()
         # query = "select * from stock where date = ? order by NO_TRADES DESC LIMIT 10"
-        query = "SELECT *, CAST(no_trades AS DOUBLE) / cast(no_of_shrs as DOUBLE) * cast(100 as DOUBLE) as percentage, last * no_of_shrs as totalmoney from stock where percentage < 100 and date = ? order by percentage, totalmoney DESC LIMIT 10"
-        countQuery = "SELECT count(*),CAST(no_trades AS DOUBLE) / cast(no_of_shrs as DOUBLE) * cast(100 as DOUBLE) as percentage, last * no_of_shrs as totalmoney from stock where percentage < 100 and date = ? order by percentage, totalmoney DESC LIMIT 10"
+        query = "SELECT *, CAST(no_trades AS DOUBLE) / cast(no_of_shrs as DOUBLE) * cast(100 as DOUBLE) as percentage, last * no_of_shrs as totalmoney from stock where percentage < 100 and date = ? order by percentage DESC LIMIT 10"
+        countQuery = "SELECT count(*),CAST(no_trades AS DOUBLE) / cast(no_of_shrs as DOUBLE) * cast(100 as DOUBLE) as percentage, last * no_of_shrs as totalmoney from stock where percentage < 100 and date = ? order by percentage DESC LIMIT 10"
         # result = db.cursor.execute(query, [date.strftime('%Y%m%d')])
         parameters = [date.strftime('%Y%m%d')]
 
@@ -381,9 +381,9 @@ class AnalyzeData():
         db = DB()
         # result = db.cursor.execute(query, parameter)
         if AnalyzeData.__doShowResult(countQuery, parameters) == True:
-            AnalyzeData.__printHeader()
+            AnalyzeData.__printHeaderTransMoney()
             for row in db.cursor.execute(query, parameters):
-                print AnalyzeData.__formatData(row)
+                print AnalyzeData.__formatDataTransMoney(row)
         else:
             print "No data found for that particular period."
 
